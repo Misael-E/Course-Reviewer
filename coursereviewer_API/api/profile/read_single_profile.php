@@ -21,7 +21,15 @@ $check = $post->Year;
 
 $result2 = $post->get_minor();
 $row2 = $result2->fetch(PDO::FETCH_ASSOC);
-$MinCode = $row2['MinD_code'];
+//$MinCode = $row2['MinD_code'];
+if($row2 == null)
+{
+	$MinCode = 'none';
+}
+else
+{
+	$MinCode = $row2['MinD_code'];
+}
 
 //if undergrad (they have a year)
 if($check != null)
